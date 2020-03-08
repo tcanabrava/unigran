@@ -1,4 +1,4 @@
-Instale rust
+[Instale rust via rustup](https://rustup.rs/)
 
 dentro do diretorio do projeto rode:
 
