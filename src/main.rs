@@ -19,5 +19,12 @@ fn main() {
             .takes_value(true)
             .required(true)
         ).get_matches();
-    println!("{:#?}", args);
+
+    let weight = clap::value_t!(args.value_of("weight"), f64)
+        .expect("You need to enter your weight for the IMC calculation.");
+
+    let height = clap::value_t!(args.value_of("height"), f64)
+        .expect("You need to enter your height for the IMC calculation");
+
+    println!("{}, {}", weight, height);
 }
