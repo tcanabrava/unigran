@@ -1,5 +1,5 @@
 [package]
-name = "IMC"
+name = "imc"
 version = "0.1.0"
 authors = ["Tomaz Canabrava <tcanabrava@kde.org>"]
 edition = "2018"
