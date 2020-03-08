@@ -1,5 +1,10 @@
 extern crate clap;
 
+fn imc_calculation(mass: f64, height: f64) -> f64 {
+    let result = mass / f64::powf(height, 2.0);
+    return result;
+}
+
 fn main() {
     let args = clap::App::new("IMC Calculations App")
         .version("1.0")
@@ -26,5 +31,5 @@ fn main() {
     let height = clap::value_t!(args.value_of("height"), f64)
         .expect("You need to enter your height for the IMC calculation");
 
-    println!("{}, {}", weight, height);
+    println!("{}", imc_calculation(weight, height));
 }
