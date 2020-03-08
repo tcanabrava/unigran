@@ -31,5 +31,10 @@ fn main() {
     let height = clap::value_t!(args.value_of("height"), f64)
         .expect("You need to enter your height for the IMC calculation");
 
-    println!("{}", imc_calculation(weight, height));
+    let message = match imc_calculation(weight, height) {
+        x if x > 25.0 => "You are overweight",
+        x if x < 18.0 => "You are underweight",
+        _ => "You are ok"
+    };
+    println!("{}", message);
 }
